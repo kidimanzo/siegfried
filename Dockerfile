@@ -1,7 +1,7 @@
 
-FROM centos:centos7
+FROM imanzo/centos-go
 
 RUN set -ex &&\
-  yum -y update &&\
-  yum -y install epel-release &&\
-  yum -y clean all
+    go get github.com/richardlehane/siegfried/cmd/sf &&\
+    sf -update
+ENTRYPOINT sf -serve localhost:19000 && /bin/bash
