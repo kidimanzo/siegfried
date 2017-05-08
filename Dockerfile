@@ -6,4 +6,4 @@ RUN set -ex &&\
     cd /go/src/github.com/richardlehane/siegfried &&\
     git checkout v1.6.5 &&\
     sf -update
-ENTRYPOINT sf -serve 0.0.0.0:19000 && /bin/bash
+ENTRYPOINT sf -serve 0.0.0.0:5138 && /bin/bash
