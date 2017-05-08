@@ -8,7 +8,9 @@ RUN sf -update
 RUN sf -serve 0.0.0.0:513&
 RUN yum install -y java
 RUN cd /go
-RUN git clone https://github.com/kidimanzo/springBoot.git 
+RUN git clone https://github.com/kidimanzo/springBoot.git && cd springBoot && git checkout 
+
 RUN cd springBoot 
 RUN chmod +x /go/springBoot/launch.sh 
+ENTRYPOINT /go/springBoot/launch.sh 
  
