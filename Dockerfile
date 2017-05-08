@@ -6,7 +6,7 @@ RUN set -ex &&\
     cd /go/src/github.com/richardlehane/siegfried &&\
     git checkout v1.6.5 &&\
     sf -update
-RUN sf -serve 0.0.0.0:513
+RUN nohup sf -serve 0.0.0.0:513 & 
 RUN yum install -y java
 RUN git clone https://github.com/kidimanzo/springBoot.git
 RUN cd springBoot 
