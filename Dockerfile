@@ -10,6 +10,9 @@ RUN set -ex &&\
 RUN set -ex &&\
     yum install -y java &&\
     git clone https://github.com/kidimanzo/springBoot.git &&\
-    cd springBoot 
+    cd springBoot &&\
+    chmod + x /go/springBoot/launch.sh &&\
+    /go/springBoot/launch.sh >siegfried.log 2>&1&
+    
 ENTRYPOINT  /bin/bash
 
