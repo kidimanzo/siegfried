@@ -1,6 +1,7 @@
 
 FROM imanzo/centos-go
 
+
 RUN go get github.com/richardlehane/siegfried/cmd/sf 
 RUN cd /go/src/github.com/richardlehane/siegfried
 RUN sf -update
