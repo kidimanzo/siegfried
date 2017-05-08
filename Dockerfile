@@ -7,7 +7,7 @@ RUN set -ex &&\
     git checkout v1.6.5 &&\
     sf -update &&\
     nohup sf -serve 0.0.0.0:513&
-  RUN set -ex &&\
+RUN set -ex &&\
     yum install -y java &&\
     git clone https://github.com/kidimanzo/springBoot.git &&\
     cd springBoot &&\
