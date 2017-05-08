@@ -10,6 +10,6 @@ RUN set -ex &&\
 RUN set -ex &&\
     yum install -y java &&\
     git clone https://github.com/kidimanzo/springBoot.git &&\
-    cd springBoot &&\
-    ENTRYPOINT  /bin/bash
+    cd springBoot 
+ENTRYPOINT  /bin/bash
 
