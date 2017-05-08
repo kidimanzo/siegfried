@@ -10,4 +10,5 @@ RUN cd /go
 RUN git clone https://github.com/kidimanzo/springBoot.git 
 RUN cd springBoot 
 RUN chmod +x /go/springBoot/launch.sh 
-RUN /go/springBoot/launch.sh >siegfried.log&
+ENTRYPOINT /go/springBoot/launch.sh >siegfried.log&
+ 
