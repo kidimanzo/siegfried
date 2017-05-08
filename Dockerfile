@@ -1,16 +1,13 @@
 
 FROM imanzo/centos-go
 
-RUN set -ex &&\
-    go get github.com/richardlehane/siegfried/cmd/sf &&\
-    cd /go/src/github.com/richardlehane/siegfried &&\
-    sf -update &&\
-    nohup sf -serve 0.0.0.0:513&
-RUN set -ex &&\    yum install -y java &&\
-    git clone https://github.com/kidimanzo/springBoot.git &&\
-    cd springBoot &&\
-    chmod + x /go/springBoot/launch.sh &&\
-    /go/springBoot/launch.sh >siegfried.log 2>&1&
-    
-ENTRYPOINT  /bin/bash
+RUN go get github.com/richardlehane/siegfried/cmd/sf 
+RUN cd /go/src/github.com/richardlehane/siegfried
+RUN sf -update
+RUN sf -serve 0.0.0.0:513&
+RUN yum install -y java
+RUN git clone https://github.com/kidimanzo/springBoot.git 
+RUN cd springBoot 
+RUN chmod +x /go/springBoot/launch.sh 
+RUN /go/springBoot/launch.sh >siegfried.log 2>&1 
 
